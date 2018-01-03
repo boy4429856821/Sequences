@@ -9,8 +9,8 @@ It also demonstrates using an ORACLE and/or PROBABILITY THEORY
 in testing and BOUNDARY (EDGE) TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Coleman Weaver
+"""  # Done
 
 import random
 import builtins  # Never necessary, but here to make a point about SUM
@@ -33,7 +33,7 @@ def run_test_sum_sequence():
     print('--------------------------------------------------')
 
     # ------------------------------------------------------------------
-    # TODO: 2. READ the COMMENTS and CODE in this function,
+    # Done
     #  asking questions as needed.
     #
     #   When you believe that you understand:
@@ -203,7 +203,7 @@ def sum_sequence(sequence):
       :type sequence: list or tuple (of integers)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
@@ -212,6 +212,11 @@ def sum_sequence(sequence):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # ------------------------------------------------------------------
+
+    count = 0
+    for k in range( len(sequence)):
+        count += sequence[k]
+    return count
 
 
 def run_test_count_items_bigger_than():
@@ -341,8 +346,23 @@ def run_test_count_items_bigger_than():
     print('  to see whether or not that seems to be true')
     print('  for your code (and Python\'s pseudo-random numbers).')
 
-    # TO DO 4 (continued):  Add your 2 ADDITIONAL tests here:
+    # Test 9:
+    sequence = (0,0,0,0,0,0,0)
+    threshold = 0
+    expected = 0
+    actual = count_items_bigger_than(sequence,threshold)
+    print()
+    print("Test 9 expected: ",expected)
+    print("       actual:   ",actual)
 
+    # Test 10:
+    sequence = (1,1,1,1,1,1,1)
+    threshold = 0
+    expected = 7
+    actual = count_items_bigger_than(sequence,threshold)
+    print()
+    print("Test 10 expected: ", expected)
+    print("        actual:   ", actual)
 
 def count_items_bigger_than(numbers, threshold):
     """
@@ -378,9 +398,16 @@ def count_items_bigger_than(numbers, threshold):
       :type threshold: float
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+
+    count = 0
+    for k in range (len(numbers)):
+        if numbers[k] > threshold:
+            count += 1
+    return count
+
 
 
 def run_test_count_positive_sines():
